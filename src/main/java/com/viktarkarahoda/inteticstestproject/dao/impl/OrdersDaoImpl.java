@@ -48,6 +48,7 @@ public class OrdersDaoImpl implements OrdersDao {
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 		namedParameters.addValue("idOrder", idOrder);
 		return namedParameterJdbcTemplate.update(SQL, namedParameters);
+		
 	}
 
 	@Override
