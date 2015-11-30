@@ -1,34 +1,61 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
 <title>Web Photo Helper</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.css" rel="stylesheet">
-
+<script src="//use.edgefonts.net/nobile:n4,i4,n5,i5,n7,i7:all;open-sans-condensed:n3,i3,n7:all;poiret-one:n4:all;lobster:n4:all;jura:n3,n4,n5,n6:all.js"></script> 
 </head>
 <body>
+
 	<div class="mainArea">
 		<div class="menu-container">
 			<div class="menu" id="menu">
 				<ul class="menu-tabs">
-					<li id="main-page" class="menu-list"><a href="index">Main</a></li>
-					<li id="clients-list" class="menu-list"><a href="clients">Clients list</a></li>
-					<li id="orders-list" class="menu-list"><a href="orders">Orders list</a></li>
-					<li id="create-order" class="menu-list"><a href="createorder">Create order</a></li>
-					<li id="new-client" class="menu-list"><a href="newclient">New client</a></li>
+					<li id="main-page" class="menu-list"><a href="index">Главная</a></li>
+					<li id="services" class="menu-list"><a href="services">Услуги</a></li>
+					<li id="contacts" class="menu-list"><a href="contacts">Контакты</a></li>
+					<li id="about" class="menu-list"><a href="about">О нас</a></li>
+				
+				
+					<li id="login" class="menu-list"><a href="login">Вход</a></li>
+					<li id="new-client" class="menu-list"><a href="newuser">Регистрация</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="content-area">
-			<div class="search-client">
-				<form action="clientcard" class="search-client-form" method="post">
-					<input type="text" class="search-client-input" name="name" placeholder="Name" id="name-search" /> 
-					<input type="text" class="search-client-input" name="surname" placeholder="Surname" id="surname-search" /> 
-					<input type="submit" class="search-client-input" value="Search" id="btn-search" />
-				</form>
-			</div>
+			<div class="content-area-block">
+			
+					<div class = "content-block" id="left-content"> 
+						<div class = "leftCol" id = "leftUp">
+						</div>
+						
+						<div class = "leftCol" id = "leftMid">
+						</div>
+						
+						<div class = "leftCol" id = "leftDown"> 
+						</div>
+					</div>
+					<div class = "content-block" id="main-content"> 
+						<div id="content"> 
+					 		
+						</div>
+					</div>
+				</div>
+				
 		</div>
+	</div>
+	<div id="footer">  
+		<div id="footer-info">"ФОТО-МГНОВЕНИЕ"</div>  
+			<div id="social"> 
+				<div id="social-icon">
+					<img src="img/vk.gif">
+					<img src="img/fb.gif">
+					<img src="img/tw.gif">
+				</div>
+			</div>
 	</div>
 </body>
 </html>

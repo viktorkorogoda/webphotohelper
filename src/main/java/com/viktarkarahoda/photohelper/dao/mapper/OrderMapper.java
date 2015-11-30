@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.viktarkarahoda.photohelper.entity.Order;
-import com.viktarkarahoda.photohelper.enums.OrderStatus;
 
 public class OrderMapper implements RowMapper<Order> {
 

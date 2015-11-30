@@ -1,3 +1,12 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 70px;
+}
+
 .mainArea {
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
@@ -8,22 +17,18 @@
 	border-width: 0PX;
 	border-style: solid;
 	border-color: lavender;
-	padding: 0PX 0PX 0PX 0PX;
 	background-image: none;
 	background-position: 0 0;
 	background-repeat: repeat-x;
 	background-attachment: scroll;
-	padding-bottom: 50px;
 }
 
 .menu-container {
 	position: relative;
-	margin: 0PX 0PX 0PX 0PX;
-	padding: 0PX 0PX 0PX 0PX;
 	z-index: 10;
 	height: 47px;
 	overflow: visible;
-	background-color: dodgerblue;
+	background-color: #27ae60;
 	border-style: solid;
 	border-width: 0PX;
 	border-color: lavender;
@@ -69,7 +74,7 @@ ul.menu-tabs li {
 }
 
 .menu-tabs li {
-	background-color: dodgerblue;
+	background-color: #27ae60;
 	background-position: left top;
 	background-repeat: repeat-x;
 	background-attachment: scroll;
@@ -77,13 +82,17 @@ ul.menu-tabs li {
 	margin: 0PX 0PX 0PX 0PX;
 }
 
+/*
+font-family: nobile, sans-serif;
+font-family: open-sans-condensed, sans-serif;
+font-family: poiret-one, sans-serif;
+font-family: lobster, serif;
+font-family: jura, sans-serif;
+*/
+
 .menu-tabs li a:hover {
 	background-color: lavender;
-	font-weight: normal;
-	font-size: 18PX;
 	color: black;
-	font-family: Arial, Helvetica, sans-serif;
-	font-style: normal;
 	border-width: 0PX;
 	border-color: #FFFFFF;
 	border-style: solid;
@@ -98,8 +107,9 @@ ul.menu-tabs li {
 	line-height: 17PX;
 	color: #FFFFFF;
 	font-weight: normal;
-	font-size: 18PX;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20PX;
+/* 	font-family: Arial, Helvetica, sans-serif; */
+	font-family: jura, sans-serif;
 	font-style: normal;
 }
 
@@ -107,119 +117,149 @@ li {
 	display: list-item;
 }
 
-#create-order, #new-client {
-	float: right;
-}
-
-.search-client {
+#login-area{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 15%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 25%;
+}
+#reg-area{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 100px;
+	width: 25%;
+}
+.btn-submit {
+	font-size: 30px;
 	width: 100%;
-	height: 200px;
-	margin-bottom: 200px;
-}
-
-.search-client-form {
-	width: 70%;
-	position: absolute;
 	height: 10%;
+	font-family: open-sans-condensed, sans-serif;
+}
+#register-form .btn-submit {
+	margin-left: 20px;
 }
 
-.search-client-form input {
-	margin-left: 10%;
-	width: 22%;
-	height: 50px;
-	margin-top: 5%;
-	font-size: x-large;
-}
 
-.content-area h1 {
-	color: dodgerblue;
-	font-size: 60px;
-	margin-left: 10%;
-	border-bottom: solid;
-	border-bottom-width: 2px;
-	border-bottom-color: dodgerblue;
-	text-shadow: black;
-}
-
-.text-input {
-	width: 70%;
+#login-form .text-input {
+	width: 100%;
 	height: 50px;
 	padding: 2px 2px 2px 2px;
 	margin-bottom: 10px;
 	display: block;
-	font-size: 22px;
-	margin-left: 5%;
+	font-size: 25px;
+	font-family: open-sans-condensed, sans-serif;
 }
 
-.new-form-div label {
+#login-form label{
+	font-size: 30px;
+	font-family: open-sans-condensed, sans-serif;
+	font-weight: normal;	
+}
+
+#register-form label {
 	font-size: 20px;
+	font-family: open-sans-condensed, sans-serif;
+	font-weight: normal;
 }
 
-.new-form-div, .new-form-div {
-	margin-left: 10%;
-	width: 30%;
+#register-form .text-input {
+	width: 100%;
+	height: 30px;
+	padding: 2px 2px 2px 2px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	display: block;
+	font-size: 18px;
+	font-family: open-sans-condensed, sans-serif;
 }
 
-.btn-add-new {
-	font-size: 30px;
-	width: 70%;
-	height: 50px;
-	margin-left: 5%;
-}
-
-.new-form-div .radio-input {
-	font-size: 30px;
-	margin-left: 30%;
-}
-
-.new-form-div select {
-	font-size: 16px;
-	padding: 5px 5px 5px 5px;
-	width: 70%;
-	height: 50px;
-	margin-left: 5%;
-}
-
-.card {
-	width: 80%;
-	margin-left: 10%;
-}
-
-div #client-info {
-	width: 400px;
-	height: 250px;
-	float: left;
-}
-
-div #cars-info {
+#login, #new-client {
 	float: right;
 }
 
-.card div {
-	display: inline;
+
+/* .content-area h1 { */
+/* 	color: #27ae60; */
+/* 	font-size: 60px; */
+/* 	margin-left: 10%; */
+/* 	border-bottom: solid; */
+/* 	border-bottom-width: 2px; */
+/* 	border-bottom-color: #27ae60; */
+/* 	text-shadow: black; */
+/* } */
+
+#register-form span{
+	font-weight: normal;
+	color: red;
 }
+
 
 .content-area {
-	height: 100%;
 	overflow: hidden;
 }
-#cars-info{
-	margin-top: 0px;
+.content-area-block {
+	margin: 10px 10px 10px 10px;
 }
 
-#client-card-orders-info {
-	height: auto;
-	width: 80%;
+#content {
+	height: 600px;
+	background-color: #b0e0e6;
+}
+.leftCol {
+	height: 200px;
+}
+
+#leftUp {
+	background-color: red;
+}
+#leftMid {
+	background-color: black;
+}
+#leftDown {
+	background-color: green;
+}
+.content-block {
+	display: inline-block;
+}
+
+#left-content {
+	width: 30%;
+}
+#main-content {
+	float: right;
+	width: 70%;
+}
+#footer {
+	display: inline;
+	margin-right: 10%;
 	margin-left: 10%;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 }
-
-#client-table {
-	font-size: large;
+#footer-info{
+	font-size: 25px;
+	font-family: open-sans-condensed, sans-serif;
+	font-weight: normal;
+	text-align: center;
 }
-
-#order-table {
-	font-size: large;
+#footer-info {
+	min-height: 100%;
+	width: 40%;
+	background-color: #27ae60;
+	float: left;
+}
+#social{
+	float: right;
+	min-height: 100%;
+	width: 60%;
+	background-color: #27ae60;
+}
+#social-icon{
+	float: right;
+	margin-right: 20%;
 }
