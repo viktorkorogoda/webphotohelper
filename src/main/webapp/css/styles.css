@@ -7,6 +7,12 @@ body {
   margin-bottom: 70px;
 }
 
+#mainImg{
+	text-align:center;
+	margin-left: 5%;
+	margin-right: auto;
+}
+
 .mainArea {
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
@@ -175,7 +181,7 @@ li {
 	font-family: open-sans-condensed, sans-serif;
 }
 
-#login, #new-client {
+#login, #new-client, #logout, #profile {
 	float: right;
 }
 
@@ -262,4 +268,23 @@ li {
 #social-icon{
 	float: right;
 	margin-right: 20%;
+}
+
+#profile-user-info {
+	font-family: jura, sans-serif;
+	font-size: 18px;
+}
+
+h3{
+	font-size: 25px;
+	font-family: open-sans-condensed, sans-serif;
+}
+.profile-label{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 3%;
+	font-size: 19px;
+}
+.profile-p{
+	margin-bottom: 0px;
 }

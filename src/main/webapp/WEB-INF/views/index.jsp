@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
         <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <title>Web Photo Helper</title>
@@ -21,29 +22,43 @@
 				
 				
 					<li id="login" class="menu-list"><a href="login">Вход</a></li>
-					<li id="new-client" class="menu-list"><a href="newuser">Регистрация</a></li>
+					<li id="new-client" class="menu-list"><a href="register">Регистрация</a></li>
+					<c:if test="${name != 'anonymousUser' && name != null}">
+								<li id="logout" class="menu-list">
+									<a href="<c:url value="/logout" />" > Выход</a>
+								</li>
+					</c:if>
+					<c:if test="${name != 'anonymousUser'&& name != null}">
+								<li id="profile" class="menu-list">
+									<a href="<c:url value="/profile" />" > Здравствуйте, ${name}</a>
+								</li>
+					</c:if>
 				</ul>
 			</div>
+		
 		</div>
 		<div class="content-area">
 			<div class="content-area-block">
-			
-					<div class = "content-block" id="left-content"> 
-						<div class = "leftCol" id = "leftUp">
-						</div>
+			<img  src="img/main.jpg" id="mainImg">
+<!-- 					<div class = "content-block" id="left-content">  -->
+<!-- 						<div class = "leftCol" id = "leftUp"> -->
+<!-- 							<img alt="" src=""> -->
+<!-- 						</div> -->
 						
-						<div class = "leftCol" id = "leftMid">
-						</div>
+<!-- 						<div class = "leftCol" id = "leftMid"> -->
+<!-- 							<img alt="" src=""> -->
+<!-- 						</div> -->
 						
-						<div class = "leftCol" id = "leftDown"> 
-						</div>
-					</div>
-					<div class = "content-block" id="main-content"> 
-						<div id="content"> 
+<!-- 						<div class = "leftCol" id = "leftDown">  -->
+<!-- 							<img alt="" src=""> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class = "content-block" id="main-content">  -->
+<!-- 						<div id="content">  -->
 					 		
-						</div>
-					</div>
-				</div>
+<!-- 						</div> -->
+<!-- 					</div> -->
+			</div>
 				
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 package com.viktarkarahoda.photohelper.enums;
 
 public enum UserRole {
-	ADMIN("Admin"), WORKER("Worker"), CLIENT("Client");
+	ROLE_ADMIN("Admin"), ROLE_WORKER("Worker"), ROLE_USER("ROLE_USER");
 
 	private String value;
 

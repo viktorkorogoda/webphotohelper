@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.viktarkarahoda.photohelper.dao.UserDao;
 import com.viktarkarahoda.photohelper.entity.User;
 import com.viktarkarahoda.photohelper.service.UserService;
+import org.apache.commons.codec.digest.DigestUtils;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,6 +25,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean addNewUser(User user) {
+		// TODO
+		user.setPassword(DigestUtils.shaHex( user.getPassword()));
 		int result = userDao.insertUser(user);
 		return result > 0;
 	}
@@ -36,5 +39,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser(String username, String password) {
 		return userDao.getUserByLoginPass(username, password);
+	}
+
+	@Override
+	public User getUser(String username) {
+		return userDao.getUserByLogin(username);
 	}
 }

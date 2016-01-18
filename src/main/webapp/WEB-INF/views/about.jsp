@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <title>Web Photo Helper</title>
@@ -19,7 +20,15 @@
 					<li id="contacts" class="menu-list"><a href="contacts">Контакты</a></li>
 					<li id="about" class="menu-list"><a href="about">О нас</a></li>
 					<li id="login" class="menu-list"><a href="login">Вход</a></li>
-					<li id="new-client" class="menu-list"><a href="newuser">Регистрация</a></li>
+					<li id="new-client" class="menu-list"><a href="register">Регистрация</a></li>
+					<c:if test="${(name != 'anonymousUser') && (name != null)}">
+								<li id="logout" class="menu-list">
+									<a href="<c:url value="/logout" />" > Выход</a>
+								</li>
+								<li id="profile" class="menu-list">
+									<a href="<c:url value="/profile" />" > Здравствуйте, ${name}</a>
+								</li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

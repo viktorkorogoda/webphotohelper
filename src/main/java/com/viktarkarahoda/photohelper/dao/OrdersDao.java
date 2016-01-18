@@ -8,7 +8,7 @@ import com.viktarkarahoda.photohelper.entity.Order;
 public interface OrdersDao {
 	
 
-	public void addNewOrder();
+	int insertOrder(Order order);
 	public void changeOrder();
 	public void deleteOrder();
 	public void updateOrder();
@@ -25,4 +25,5 @@ public interface OrdersDao {
 	public List<Order> getOrdersByDateOrderFinished();
 	public List<Order> getOrdersByEmailNotify();
 	public List<Order> getOrdersByStatus();
+	void addNewOrder();
 }

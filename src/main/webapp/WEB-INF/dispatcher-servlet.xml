@@ -50,6 +50,12 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="location" value="classpath:webphotohelper.properties" />
 	</bean>
+	
+	<bean id="filterMultipartResolver" 
+      class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+
+    <property name="maxUploadSize" value="-1" />
+	</bean> 
 
 	<!-- DB connection configuration -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

@@ -14,10 +14,10 @@ import org.springframework.stereotype.Repository;
 import com.viktarkarahoda.photohelper.dao.UserDao;
 import com.viktarkarahoda.photohelper.dao.mapper.UserMapper;
 import com.viktarkarahoda.photohelper.entity.User;
-	
+
 @Repository
 public class UserDaoImpl implements UserDao {
-	
+
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
 				+ "VALUES (USERS_SEQ.nextval, :nameandsurname, :role, :note, :address, :phone, :email, :cityindex, :city, :region, :country, :login, :password)";
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 		namedParameters.addValue("nameandsurname", user.getNameandsurname());
-		namedParameters.addValue("role", "Client"/* user.getRole() */);
+		namedParameters.addValue("role", "ROLE_USER"/* user.getRole() */);
 		namedParameters.addValue("note", user.getNote());
 		namedParameters.addValue("address", user.getAddress());
 		namedParameters.addValue("phone", user.getPhone());
@@ -54,17 +54,44 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public boolean isValidUser(String username, String password) throws SQLException {
-		
+
 		String SQL = "Select count(login) from users where login=:login and userpassword=:password";
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 		namedParameters.addValue("login", username);
 		namedParameters.addValue("password", password);
-		if ( namedParameterJdbcTemplate.queryForInt(SQL, namedParameters) > 0)
-		{
+		if (namedParameterJdbcTemplate.queryForInt(SQL, namedParameters) > 0) {
 			return true;
-		}
-		else
+		} else
 			return false;
+	}
+
+	@Override
+	public User getUserByLoginPass(String username, String password) {
+		String SQL = "Select * from USERS where LOGIN=:login and USERPASSWORD=:password";
+		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+		namedParameters.addValue("login", username);
+		namedParameters.addValue("password", password);
+
+		List<User> userList = namedParameterJdbcTemplate.query(SQL, namedParameters, new UserMapper());
+		if (CollectionUtils.isNotEmpty(userList)) {
+			return userList.get(0);
+		}
+
+		return null;
+	}
+
+	@Override
+	public User getUserByLogin(String username) {
+		String SQL = "Select * from USERS where LOGIN=:login";
+		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+		namedParameters.addValue("login", username);
+
+		List<User> userList = namedParameterJdbcTemplate.query(SQL, namedParameters, new UserMapper());
+		if (CollectionUtils.isNotEmpty(userList)) {
+			return userList.get(0);
+		}
+
+		return null;
 	}
 
 	@Override
@@ -112,21 +139,6 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getWorkerNoOrder() {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User getUserByLoginPass(String username, String password) {
-		String SQL = "Select * from users where login=:login and password=:password";
-		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
-		namedParameters.addValue("login", username);
-		namedParameters.addValue("password", password);
-		
-		List<User> userList = namedParameterJdbcTemplate.query(SQL, namedParameters, new UserMapper());
-		if (CollectionUtils.isNotEmpty(userList)) {
-			return userList.get(0);
-		}
-
 		return null;
 	}
 

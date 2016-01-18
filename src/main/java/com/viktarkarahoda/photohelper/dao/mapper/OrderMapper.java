@@ -11,8 +11,13 @@ public class OrderMapper implements RowMapper<Order> {
 
 	@Override
 	public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Order order = new Order();
+		order.setDescription("description");
+		order.setIdOrder(rs.getInt("idOrder"));
+		order.setIdUser(rs.getInt("idUser"));
+		order.setOrderDate("orderdate");
+		order.setEmailNotify("emailnotify");
+		return order;
 	}
 
 }
