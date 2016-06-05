@@ -1,9 +1,10 @@
 package com.viktarkarahoda.photohelper.entity;
 
-public class Worker {
+public class Services {
+	
 	private int id;
 	private String name;
-	private String phone;
+	private int cost;
 	public int getId() {
 		return id;
 	}
@@ -16,19 +17,19 @@ public class Worker {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhone() {
-		return phone;
+	public int getCost() {
+		return cost;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setCost(int cost) {
+		this.cost = cost;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + cost;
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		return result;
 	}
 	@Override
@@ -39,18 +40,15 @@ public class Worker {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Worker other = (Worker) obj;
+		Services other = (Services) obj;
+		if (cost != other.cost)
+			return false;
 		if (id != other.id)
 			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
-			return false;
-		if (phone == null) {
-			if (other.phone != null)
-				return false;
-		} else if (!phone.equals(other.phone))
 			return false;
 		return true;
 	}

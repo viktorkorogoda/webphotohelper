@@ -20,15 +20,15 @@
 					<li id="contacts" class="menu-list"><a href="contacts">Контакты</a></li>
 					<li id="about" class="menu-list"><a href="about">О нас</a></li>
 				
-				
-					<li id="login" class="menu-list"><a href="login">Вход</a></li>
-					<li id="new-client" class="menu-list"><a href="register">Регистрация</a></li>
+					<c:if test="${name == 'anonymousUser' || name == null}">
+						<li id="login" class="menu-list"><a href="login">Вход</a></li>
+						<li id="new-client" class="menu-list"><a href="register">Регистрация</a></li>
+					</c:if>
+					
 					<c:if test="${name != 'anonymousUser' && name != null}">
 								<li id="logout" class="menu-list">
 									<a href="<c:url value="/logout" />" > Выход</a>
 								</li>
-					</c:if>
-					<c:if test="${name != 'anonymousUser'&& name != null}">
 								<li id="profile" class="menu-list">
 									<a href="<c:url value="/profile" />" > Здравствуйте, ${name}</a>
 								</li>

@@ -206,9 +206,14 @@ li {
 	overflow: hidden;
 }
 .content-area-block {
+	text-align: center;
 	margin: 10px 10px 10px 10px;
 }
 
+#mainImg {
+	width: 1200px;
+	margin-left: 0px;
+}
 #content {
 	height: 600px;
 	background-color: #b0e0e6;
@@ -287,4 +292,14 @@ h3{
 }
 .profile-p{
 	margin-bottom: 0px;
+}
+.text-input-add {
+	height: 30px;
+	padding: 2px 2px 2px 2px;
+	margin-bottom: 10px;
+	display: block;
+	font-size: 14px;
+}
+.star {
+	color: red;
 }

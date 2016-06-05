@@ -18,6 +18,7 @@
 					<li id="main-page" class="menu-list"><a href="index">Главная</a></li>
 					<li id="services" class="menu-list"><a href="services.jsp">Услуги</a></li>
 					<li id="contacts" class="menu-list"><a href="contacts">Контакты</a></li>
+					<li id="guestbook" class="menu-list"><a href="guestbook">Гостевая книга</a></li>
 					<li id="about" class="menu-list"><a href="about">О нас</a></li>
 					
 					<c:if test="${name == 'anonymousUser' || name == null}">

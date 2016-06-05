@@ -46,50 +46,7 @@
  		</div> 
 		<div class="content-area">
 			<div class="content-area-block">
-				<h3>Данные профиля</h3>
-				<hr>
-				<form id="profile-user-info">
-					<p class="profile-p"> Имя и фамилия: </p> <label class="profile-label">${nameAndSurname }</label>
-					<p class="profile-p"> Телефон: </p> <label class="profile-label">${phone }</label>
-					<p class="profile-p"> e-mail: </p> <label class="profile-label">${e-mail}</label>
-					<p class="profile-p"> Примечание: </p> <label class="profile-label">${note}</label>
-					<p class="profile-p"> Страна: </p> <label class="profile-label">${country}</label>
-					<p class="profile-p"> Область: </p> <label class="profile-label">${region}</label>
-					<p class="profile-p"> Город: </p> <label class="profile-label">${city}</label>
-					<p class="profile-p"> Индекс: </p> <label class="profile-label">${index}</label>
-					<p class="profile-p"> Адрес: </p> <label class="profile-label">${address}</label>
-<!-- 					<input type="submit" value="Изменить данные"> -->
-				</form>
-				<hr>
-				<div id="add-profile-order">
-					<input type="button" id="add-order-btn" value="Добавить заказ" class="btn btn-info btn-add-new" onclick = "showAddDialog()" style="width: 200px"> 
-					
-					<div id="div-add-order-form" title="Оформление нового заказа" class="ui-dialog rfAdd form-group" style="background-color: #FFFFFF">
-						<div class="col-xs-2 form-group">
-						  <label for="service-name">Название услуги<span class="star">*</span></label>
-						  <input type="text" id="service-name-add" name="service-name" class="text-input-add rfield form-control" placeholder="Печать фото" required>
-						</div>			
-						<div class="col-xs-2 form-group">
-							<label for="size">Размер<span class="star">*</span></label>
-							<input type="text" id="size-add" name="size" class="text-input-add rfield form-control"  placeholder="10x15" required>					
-						</div>
-						<div class="col-xs-2 form-group">
-							<label for="count">Количество<span class="star">*</span></label>
-							<input type="text" id="count-add" name="count" class="text-input-add rfield form-control" placeholder="50" required>
-						</div>
-						<div class="col-xs-2 form-group">
-							<label for="material-type">Тип материала<span class="star">*</span></label>
-							<input type="text" id="material-type-add" name="material-type" class="text-input-add rfield form-control" placeholder="Ткань" required>
-						</div>
-						<div class="col-xs-2 form-group">
-							<label for="wishes">Пожелания<span class="star">*</span></label>
-							<input type="text" id="wishes-add" name="wishes" class="text-input-add rfield form-control" placeholder="Хочу всё красиво!" required>
-						</div>
-						<div class="col-xs-2 form-group">
-							<input type="button" value="Добавить услугу" class="btn btn-info btn-add-new" onclick="">			
-						</div>
-					</div>
-				</div>	
+				<h3>Управление заказами</h3>
 				<hr>
 				<div id="orders-list">
 				<h3>Список заказов</h3>
@@ -104,6 +61,8 @@
 								<th>Срок исполнения</th>
 								<th>Уведомление по email</th>
 								<th>Исполнитель</th>
+								<th>Обратная связь</th>
+								<th>Управление заказом</th>
 							</tr>
 						</thead>
 						
@@ -132,6 +91,13 @@
 								</td>
 								<td>
 									Иванов И.И.
+								</td>
+								<td> 
+									<input type="button" value="Отправить сообщение" class="btn btn-info">
+								</td>
+								<td>
+									<input type="button" value="Изменить статус" class="btn btn-info">
+									<input type="button" value="Отменить" class="btn btn-info">
 								</td>
 							</tr>
 						</tbody>
